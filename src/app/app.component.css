@@ -1,0 +1,78 @@
+#Title {
+  text-align:center;
+  font-size:75px;
+  font-family:Arial;
+  /* margin-top:5%; */
+  margin-bottom:5%;
+  color:rgb(63, 63, 63)
+}
+
+#chartdiv {
+  width:75%;
+  height: 700px;
+  margin-left:200px;
+  /* margin-top:40%; */
+}
+
+.centre_paragraph{
+  padding-left:500px;
+  padding-right:500px;
+  text-align:justify;
+  font-family:Arial;
+  margin-bottom:20%;
+  margin-top:20%;
+}
+/* Setting fade transition and default settings */
+
+
+
+/*header {
+  background-color:rgb(45, 138, 224)
+} */
+
+/* header {
+	width: 100wh;
+	height: 90vh;
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+} */

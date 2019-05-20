@@ -1,20 +1,25 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<header style="height:1000px">
+  <img src="../assets/SEEK-Logo.jpg" style=" display:block; padding-top:100px; margin-left: auto; margin-right: auto">
+  <h1 id="Title" >Job Market<br>Data Analysis</h1>
+
+  <button mat-stroked-button  style="padding-left:30px; padding-right:30px; border-bottom:10%; margin-bottom:5%; display:block; margin-left: auto; margin-right: auto" (click)="scrollToElement(target)">Begin</button>
+
+</header>
+<div #target></div>
+<body>
+
+
+  <p class="centre_paragraph">The dataset structure is that of a job description containing all of its listed information including; for the Job Title, Company name, Date, Location, Area within the location, general classification of the job and its more specific sub classification, Requirements, Full Description, lowest and highest salary for the respective sub classification.
+    <br><br>
+    The Job Title, location, area, classification and subclassification are short and consistent strings that fit into a certain set of values. These values are likely taken from the SEEK websites selection of values. The Company name and date are short strings as well but they are inconsistent with unique values.
+    <br><br>
+    Requirements and the Full description of the job listing are longer strings containing the raw html of the job description. They contain whitespace characters, unicode emojis and bulletpoint values. They are mostly inconsistent and are mostly all unique for each row.
+    <br><br>
+    The lowestSalary and highestSalary columns consist of 11 different integer values for each salary increment. The job type column contains 4 string values categorising each one as either part time, full time etc.</p>
+  <!-- <div id='chartdiv' style='width: 100%; height:500px'></div> -->
+
+
+  <div id='chartdiv'></div>
+
+</body>
 
