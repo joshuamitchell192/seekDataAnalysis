@@ -1,0 +1,27 @@
+
+#main_word_cloud_div {
+  width:75%;
+  height: 550px;
+  margin-left:200px;
+  /* margin-top:40%; */
+}
+
+.select-class-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+#word_cloud_div {
+  width:75%;
+  height: 550px;
+  margin-left:200px;
+  /* margin-top:40%; */
+}

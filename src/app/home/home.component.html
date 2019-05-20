@@ -1,3 +1,23 @@
-<p>
-  home works!
-</p>
+<header style="height:800px">
+  <img src="./assets/images/SEEKLogo.jpg" style=" display:block; padding-top:100px; margin-left: auto; margin-right: auto">
+  <h1 id="global-title" >Job Market<br>Data Analysis</h1>
+
+  <button mat-stroked-button style="display:block; margin-left: auto; margin-right: auto" (click)="scrollToElement(target1)" >Begin</button>
+
+</header>
+<div #target1></div>
+<body>
+
+  <div class="global-page">
+    <p class="global-centre-paragraph global-page">The dataset structure is that of a job description containing all of its listed information including; for the Job Title, Company name, Date, Location, Area within the location, general classification of the job and its more specific sub classification, Requirements, Full Description, lowest and highest salary for the respective sub classification.
+    <br><br>
+    The Job Title, location, area, classification and subclassification are short and consistent strings that fit into a certain set of values. These values are likely taken from the SEEK websites selection of values. The Company name and date are short strings as well but they are inconsistent with unique values.
+    <br><br>
+    Requirements and the Full description of the job listing are longer strings containing the raw html of the job description. They contain whitespace characters, unicode emojis and bulletpoint values. They are mostly inconsistent and are mostly all unique for each row.
+    <br><br>
+    The lowestSalary and highestSalary columns consist of 11 different integer values for each salary increment. The job type column contains 4 string values categorising each one as either part time, full time etc.</p>
+  <!-- <div id='chartdiv' style='width: 100%; height:500px'></div> -->
+  </div>
+  
+
+</body>

@@ -1,0 +1,23 @@
+<h1 id="global-title" style="padding-top:50px">Skills</h1>
+
+<div id='main_word_cloud_div' style="margin-bottom:100px"></div>
+
+<p class="global-centre-paragraph">
+  gegretgrtgrdgdtbdrbdgbgsfssrgrgertgrtgrsgrtgrtgrsgrsgrsgsrgrgrgsrgsrtgsrg srtgrtgsrstgsrtgifuhgriut ghrtughrigh ritugh rdtuighrdituogh riotugh roiughdh ruhg rdigh irdghhriu tghridgh riutgh ritughritugh roitguhri tuogh ritughriutgh iruhgriugh ruighd riutghidrugh ifuhbfgg
+</p>
+
+<div class="global-separator"></div>
+<mat-divider class="global-divider"></mat-divider>
+<h1 id='global-title'>Individual Class Skills</h1>
+<form  class="select-class-form">
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="Select Classification" (keyup.enter)="onEnter($event)" aria-label="Class" matInput [formControl]="select_class" [matAutocomplete]="auto">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+<div id='word_cloud_div'></div>
