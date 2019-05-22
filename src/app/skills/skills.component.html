@@ -8,10 +8,10 @@
 
 <div class="global-separator"></div>
 <mat-divider class="global-divider"></mat-divider>
-<h1 id='global-title'>Individual Class Skills</h1>
+<h1 id='global-title'>Sub-Sector Skills</h1>
 <form  class="select-class-form">
   <mat-form-field class="example-full-width">
-    <input type="text" placeholder="Select Classification" (keyup.enter)="onEnter($event)" aria-label="Class" matInput [formControl]="select_class" [matAutocomplete]="auto">
+    <input type="text" placeholder="Select Sector" (keyup.enter)="onEnter($event)" aria-label="Class" matInput [formControl]="select_class" [matAutocomplete]="auto">
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
         {{option}}
@@ -21,3 +21,9 @@
 </form>
 
 <div id='word_cloud_div'></div>
+
+<div class="global-separator"></div>
+
+<object width=100% height="800" style="margin-left:auto; margin-right:auto" data="../../assets/data/Sector-Visualization.html">
+  Your browser doesn’t support the object tag.
+</object>

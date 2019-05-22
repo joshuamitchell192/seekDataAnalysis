@@ -64,9 +64,7 @@ export class SkillsComponent implements OnInit {
 
   ngAfterViewInit() {
 
-    ////////////////////////////////////////////////////////////////////////////////
-    /// Main Word Cloud
-    /////////////////////////////////////////////////////////////////////////////////
+
     let main_word_cloud_chart = am4core.create("main_word_cloud_div", am4plugins_wordCloud.WordCloud);
     let series = main_word_cloud_chart.series.push(new am4plugins_wordCloud.WordCloudSeries());
 

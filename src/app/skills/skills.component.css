@@ -12,6 +12,7 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
 }
 
 .example-full-width {
@@ -21,7 +22,7 @@
 
 #word_cloud_div {
   width:75%;
-  height: 550px;
+  height: 600px;
   margin-left:200px;
   /* margin-top:40%; */
 }
