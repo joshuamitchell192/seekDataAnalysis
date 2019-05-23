@@ -94,13 +94,13 @@ THE SOFTWARE.
 
 @angular/material/button
 
+@angular/material/card
+
 @angular/material/core
 
 @angular/material/datepicker
 
 @angular/material/dialog
-
-@angular/material/divider
 
 @angular/material/form-field
 
