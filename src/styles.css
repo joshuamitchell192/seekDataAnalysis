@@ -2,15 +2,15 @@
 @import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 .global-page{
-  
+
   margin-top:20%;
   height: 400px;
   margin-bottom: 0%;
 }
 
 .global-centre-paragraph{
-  padding-left:20%;
-  padding-right:20%;
+  padding-left:25%;
+  padding-right:25%;
   text-align:justify;
   font-family:Arial;
 }
@@ -38,6 +38,10 @@
 
 .global-separator{
   height: 400px;
+}
+
+.global-text-separator{
+  height: 50px;
 }
 
 .global-divider{

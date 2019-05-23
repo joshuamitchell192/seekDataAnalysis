@@ -2,22 +2,27 @@
   <img src="./assets/images/SEEKLogo.jpg" style=" display:block; padding-top:100px; margin-left: auto; margin-right: auto">
   <h1 id="global-title" >Job Market<br>Data Analysis</h1>
 
-  <button mat-stroked-button style="display:block; margin-left: auto; margin-right: auto" (click)="scrollToElement(target1)" >Begin</button>
+  <button mat-stroked-button style="display:block; margin-left: auto; margin-right: auto" (click)="scrollToElement(target1)" >Intro</button>
 
 </header>
 <div #target1></div>
 <body>
 
   <div class="global-page">
-    <p class="global-centre-paragraph global-page">The dataset structure is that of a job description containing all of its listed information including; for the Job Title, Company name, Date, Location, Area within the location, general classification of the job and its more specific sub classification, Requirements, Full Description, lowest and highest salary for the respective sub classification.
-    <br><br>
-    The Job Title, location, area, classification and subclassification are short and consistent strings that fit into a certain set of values. These values are likely taken from the SEEK websites selection of values. The Company name and date are short strings as well but they are inconsistent with unique values.
-    <br><br>
-    Requirements and the Full description of the job listing are longer strings containing the raw html of the job description. They contain whitespace characters, unicode emojis and bulletpoint values. They are mostly inconsistent and are mostly all unique for each row.
-    <br><br>
-    The lowestSalary and highestSalary columns consist of 11 different integer values for each salary increment. The job type column contains 4 string values categorising each one as either part time, full time etc.</p>
-  <!-- <div id='chartdiv' style='width: 100%; height:500px'></div> -->
+    <mat-card style="max-width: 1000px; margin-left: auto; margin-right:auto">
+        <mat-card-header >
+          <mat-card-title>Introduction</mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content>
+          <p >
+              The following study explores the concepts of Data Analysis and Interpretation, Visualisation, Analysis of Special Types of Data and Analysis with Big Data Infrastructure. Exploratory Data Analysis was used to gather further intuition about the attributes of the dataset, and to gain insight into the underlying trends and chracteristics of the data. Statistical Data Analysis was used to examine the trends of Measures of Central Tendency and the Measures of Dispersion, as well as for the supervised learning task of regression. Predictive Data Analysis was used on time series data for temporal predictions through forecasting techniques. Data Visualisation techniques were utilised to perform spatial and textual data visualisation, in order to find additional insights into the trends of the data, and to present the data in a way that was informative and intuitive to a regular viewer. Textual data analytics was used to extract sector-related skillsets from the job advertisement descriptions. Lastly, Distributed Data Analysis was utilised for improving the efficiency of the data analysis study.
+          </p>
+        </mat-card-content>
+      </mat-card>
   </div>
-  
+  <button mat-stroked-button style="display:block; margin-left: auto; margin-right: auto" routerLink="/trend" >Begin</button>
 
 </body>
+
+<div class="global-separator"></div>

@@ -5,7 +5,13 @@
 }
 
 #weekOfYearDiv{
-  width:75%;
-  height: 600px;
-  margin-left:200px;
+  width:85%;
+  height: 800px;
+  margin-left:100px;
+}
+
+#salaryOverTimeDiv{
+  width:85%;
+  height: 850px;
+  margin-left:130px;
 }

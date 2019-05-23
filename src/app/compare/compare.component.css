@@ -1,7 +1,7 @@
 #marketShareDiv{
   width:75%;
   height: 850px;
-  margin-left:200px;
+  margin-left:230px;
 }
 
 #marketShareCitiesDiv{
@@ -12,6 +12,6 @@
 
 #stackedBarDiv{
   width:95%;
-  height: 1200px;
+  height: 1000px;
   margin-left:50px;
 }

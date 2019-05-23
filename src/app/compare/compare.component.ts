@@ -3,6 +3,7 @@ import * as am4core from '@amcharts/amcharts4/core';
 import * as am4charts from "@amcharts/amcharts4/charts";
 // import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_material from "@amcharts/amcharts4/themes/material";
+import { Title } from '@angular/platform-browser';
 
 import marketShareData from '../../assets/data/marketshare_pie_chart.json';
 import stackBarData from '../../assets/data/stacked_column.json';
@@ -19,11 +20,17 @@ am4core.useTheme(am4themes_material);
 })
 export class CompareComponent implements OnInit {
 
+  newTitle = 'Compare - Seek Data Analysis';
 
+  constructor(private titleService: Title) { }
 
-  constructor() { }
+  public setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
+  }
+
 
   ngOnInit() {
+    this.titleService.setTitle(this.newTitle)
   }
 
 
@@ -117,16 +124,16 @@ export class CompareComponent implements OnInit {
 
     let marketShareCitiesPieChart = am4core.create('marketShareCitiesDiv', am4charts.PieChart);
     marketShareCitiesPieChart.data = marketShareCitiesData;
-    let pieSeries = marketShareCitiesPieChart.series.push(new am4charts.PieSeries());
-    pieSeries.dataFields.value = "job_advertisement_count";
-    pieSeries.dataFields.category = "city";
-    pieSeries.slices.template.stroke = am4core.color("#fff");
-    pieSeries.slices.template.strokeWidth = 2;
-    pieSeries.slices.template.strokeOpacity = 1;
-    pieSeries.hiddenState.properties.opacity = 1;
-    pieSeries.hiddenState.properties.endAngle = -90;
-    pieSeries.hiddenState.properties.startAngle = -90;
-    pieSeries.labels.template.disabled = true;
+    let marketShareCitiesPieSeries = marketShareCitiesPieChart.series.push(new am4charts.PieSeries());
+    marketShareCitiesPieSeries.dataFields.value = "job_advertisement_count";
+    marketShareCitiesPieSeries.dataFields.category = "city";
+    marketShareCitiesPieSeries.slices.template.stroke = am4core.color("#fff");
+    marketShareCitiesPieSeries.slices.template.strokeWidth = 2;
+    marketShareCitiesPieSeries.slices.template.strokeOpacity = 1;
+    marketShareCitiesPieSeries.hiddenState.properties.opacity = 1;
+    marketShareCitiesPieSeries.hiddenState.properties.endAngle = -90;
+    marketShareCitiesPieSeries.hiddenState.properties.startAngle = -90;
+    marketShareCitiesPieSeries.labels.template.disabled = true;
 
     let marketShareCitiesPieTitle = marketShareCitiesPieChart.titles.create();
     marketShareCitiesPieTitle.text = "Market Share Between Cities";

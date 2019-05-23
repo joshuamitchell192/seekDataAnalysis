@@ -2,6 +2,7 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import { Title } from '@angular/platform-browser';
 
 import * as am4core from '@amcharts/amcharts4/core';
 import * as am4charts from "@amcharts/amcharts4/charts";
@@ -29,7 +30,7 @@ export interface User {
 })
 export class SkillsComponent implements OnInit {
 
-
+  newTitle = 'Skills - Seek Data Analysis';
 
   selected_class : string = '';
   data: any;
@@ -53,6 +54,9 @@ export class SkillsComponent implements OnInit {
       map(value => this._filter(value))
     );
 
+    this.titleService.setTitle(this.newTitle);
+
+
   }
 
   private _filter(value: string): string[] {
@@ -60,7 +64,7 @@ export class SkillsComponent implements OnInit {
     return this.options.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
 
-  constructor() { }
+  constructor(private titleService: Title) { }
 
   ngAfterViewInit() {
 

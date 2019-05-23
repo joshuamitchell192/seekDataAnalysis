@@ -4,6 +4,7 @@ import * as am4charts from "@amcharts/amcharts4/charts";
 // import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import am4themes_material from "@amcharts/amcharts4/themes/material";
 
+import { Title } from '@angular/platform-browser';
 
 // am4core.useTheme(am4themes_animated);
 am4core.useTheme(am4themes_material);
@@ -14,12 +15,18 @@ am4core.useTheme(am4themes_material);
 })
 export class HomeComponent implements OnInit {
 
-  title = 'bigData';
+  newTitle = 'Home - Seek Data Analysis';
 
   // private chart: am4charts.XYChart;
   private chart: am4charts.XYChart;
 
-  constructor(private zone: NgZone) {}
+  constructor(private zone: NgZone, private titleService: Title) {}
+
+
+  public setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
+  }
+
 
   scrollToElement($element): void {
     console.log($element);
@@ -27,7 +34,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.titleService.setTitle(this.newTitle);
   }
 
   ngAfterViewInit() {

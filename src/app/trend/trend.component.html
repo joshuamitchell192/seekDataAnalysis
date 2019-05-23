@@ -1,9 +1,136 @@
 <h1 id="global-title" style="padding-top:50px" >Trend Analysis</h1>
 
-<!-- <button mat-stroked-button style="display:block; margin-left: auto; margin-right: auto" (click)="scrollToElement(target2)" >Begin</button> -->
 
-<div id='chartdiv' ></div>
+<div>
+  <div id="salaryOverTimeDiv"></div>
+  
+  <mat-card style="max-width: 1000px; margin-left: auto; margin-right:auto">
+    <mat-card-header >
+      <mat-card-title>Has salary changed over the 6 months</mat-card-title>
 
-<div class="global-separator"></div>
+    </mat-card-header>
+    <mat-card-content>
+      <p >
+        Here we examine the trend of salary over the 6 months of data that was collected. We're able to show different aspects of how salary has changed over time including the mean, median, standard deviation, variance. For instance, by taking the mean over time, we don't take into account the number of job postings and isolate the salary itself. On the otherhand, median allows us to see the change in most common salary and Standard Deviation allows us to see the spread salaries at any given time. From this information we can determine how the general overall salary is changing in Australia, what the largest portion of people are being paid and the disparity between high and low incomes over time. This can give us insight into how Australia's economy has changed over the 6 months from the perspctive of the job market. By plotting the regression we can deduce if the economy is improving or declining.
+        <br><br>
+        Firstly, to graph the salary over time we needed to place the date in the correct, increasing order. This was done by converting the date column to a datetime type and grouping the salaries with each of the dates. A function is used to calculate some measure (mean, median, standard deviation) of each date to produce the final line graph. Analysing changes over time is most suitable to line graphs as data is structured so that points occur consecutively.
+        <br><br>
+        Our results show a slight decline in the overall job salary over the 6 months. The largest peak is around december of 2018 with an average salary of $160,000+, followed by period of low peaks of $0 - $30,000 corresponding with relatively low standard deviation. This is an interesting finding and may be due to companies hiring large amounts of people for the new year and over the christmas holidays. Generally we also see large spikes on certain days that could be the result of large companies releasing new positions at the same time. For example, Coles hiring people periodically across multiple locations. Later when looking at which companies post most frequently, we also see the other job search websites like Jora Local post their own listings on seek. Consequently this could also be the cause for the large spikes. To improve our results and gain further insight we would need to collect data over a longer period. Collecting over a longer period will improve reliability and reduce the impact of noise on our results.
 
-<div id="weekOfYearDiv"></div>
+      </p>
+    </mat-card-content>
+  </mat-card>
+  <div class="global-text-separator"></div>
+  <div >
+    <h2 style="text-align:center">Sector Salary Over Time </h2>
+    <img width=70% height=70% src="../../assets/images/classSalaryOverTime.jpg" style="display:block; margin-left:auto; margin-right: auto">
+  </div>
+
+  <div >
+    <h2 style="text-align:center">Location Salary Over Time </h2>
+    <img width=70% height=70% src="../../assets/images/locSalaryOverTime.jpg" style="display:block; margin-left:auto; margin-right: auto">
+  </div>
+  <mat-card style="max-width: 1000px; margin-left: auto; margin-right:auto">
+    <!-- <mat-card-header >
+      <mat-card-title>Has salary changed over the 6 months</mat-card-title>
+
+    </mat-card-header> -->
+    <mat-card-content>
+      <p >
+          Now we break up the salary over time into different sectors/locations so that we may make comparisons between them. Comparing how different job sectors/locations are performing allows us to determine which sectors will be most profitable in the future by extrapolating trends. Therefore we can be proactive about the sectors we decide to enter by providing recommendations on those to avoid and those to pursue.
+          <br><br>
+          Each sector/location is plotted within the same graph so that there trajectories can be closely compared. A range of sectors is choosen from the dataset to graph for comparison and an operation (mean, median, standard deviation) is again applied for each sector with the same date.
+          <br><br>
+          Depending on the sectors selected, patterns can vary dramatically. Interestingly, some sectors follow very similar trajectories while others meander on their own. For example, the information and communication technology, human resources recruitment and mining resources energy sectors have low distances between them along their trajectories, while the community services development and education training sectors usually have smaller values at greater distances. Differences also occur in the patterns between groups of sectors like those mentioned above. This is an indication that some sectors can be clustered together by their similarity. The same behaviour can also be seen for each of the locations. Those with similar characteristics like population, distribution, also have similar trajectories.
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+
+</div>
+
+<div>
+  <div class="global-separator"></div>
+
+  <div id="weekOfYearDiv"></div>
+
+  <!-- <div class="global-separator"></div> -->
+
+  <div id='chartdiv' ></div>
+
+  <div >
+    <h2 style="text-align:center">Job Posts Per Day of the Week </h2>
+    <img width=50% height=50% src="../../assets/images//weekday.jpg" style="display:block; margin-left:auto; margin-right: auto">
+
+  </div>
+
+  <div class="global-text-separator"></div>
+  <mat-card style="max-width: 1000px; margin-left: auto; margin-right:auto">
+      <mat-card-header >
+        <mat-card-title>Detecting the pattern of job posting</mat-card-title>
+
+      </mat-card-header>
+      <mat-card-content>
+        <p >
+          The pattern of job posting is an important source of information to uncover and understand as finding a job often is partly being in the right place at the right time to submit an application. Knowing when jobs are generally posted can be helpful to know when to prepare sooner and find jobs on time.
+          <br><br>
+          The dates are split into lists of ints and passed to python's datetime functions to bin each one into the correct weekday, month or week of the year they belong to. Histograms were most appropriate because we're trying to get a general idea of patterns occuring at different
+          <br><br>
+          We see that as expected, the weekdays have by the most number of job posts, averaging 61,182.6, with Wednesday as the most common overall. The average of weekdays and weekend days however differ by 50,651.6. Weekdays differs at most by 14,663 between Monday and Wednesday. Interestingly, the months graph shows a decline in a staccato like fashion in the number of job posts from October to March. Months December and January show an uptick of around 30000 compared to November, likely because of the Christmas and holiday hiring period. Even more interesting is the decline in job postings in March down to 402 and large increase in October to 11,3782. October may be the Month when most companies post job listing so that they can have time to prepare for people to start working the following year and March is after when they've already hired for the year. We cannot be completely certain as we don't have a years worth of data to draw the whole seasonal period from to determine if this is an anomoly or not. The Weeks of the year graph shows a vague pattern of jobs being posted within the first or second week of each month. The only exception being October where the largest peak is in the 3rd week. One issue we found with the data is that dates starting from January don't have Classification or Location values, reducing the reliability of data for specific classifications and locations. Next we continue our analysis by looking into the trend and seasonality of the weeks of the year data.</p>
+
+      </mat-card-content>
+  </mat-card>
+
+
+</div>
+
+<!-- <div class="global-separator"></div> -->
+
+
+
+<div>
+
+  <div >
+    <div class="global-separator"></div>
+    <h2 style="text-align:center">Decomposition</h2>
+    <img width=60% height=60% src="../../assets/images/decomp.jpg" style="display:block; margin-left:auto; margin-right: auto">
+  </div>
+  <div class="global-text-separator"></div>
+  <mat-card style="max-width: 1000px; margin-left: auto; margin-right:auto">
+      <mat-card-header >
+        <mat-card-title>Decomposing into Trend, Seasonality and Residual Graphs</mat-card-title>
+
+      </mat-card-header>
+      <mat-card-content>
+        <p >
+            When analysising time series information it's useful to split the data into systematic (level, trend, seasonality) and non-systematic (residual) parts so that we can clearly see patterns occuring over time. The level is calculated with the local mean, providing a base of where to centre each of the graphs. The trend indicates the longer term growth or decline of the series and seasonality uncovers reoccuring periodic patterns with a given period/interval.
+            <br><br>
+            Here we use the statsmodel decompose function implementation, which uses a moving average method.
+            <br><br>
+            Again, the trend moves in a trigonomic manner from the peak of october down to the valley of November, coming back up for December and January and finally, falling back down linearly until march. Drawing from this limited data we can see reoccuring pattern in the trend that repeats every 3 months. Using the optimal seasonlity period of 6, a repeating downward moving, three step pattern occurs every 2 months.
+        </p>
+      </mat-card-content>
+  </mat-card>
+
+  <div >
+    <h2 style="text-align:center">Forecasting Future Job Frequency</h2>
+    <img width=70% height=70% src="../../assets/images/forecast.jpg" style="display:block; margin-left:auto; margin-right: auto">
+  </div>
+  <div class="global-text-separator"></div>
+  <mat-card style="max-width: 1000px; margin-left: auto; margin-right:auto">
+      <mat-card-header >
+        <mat-card-title>Making Predictions</mat-card-title>
+
+      </mat-card-header>
+      <mat-card-content>
+        <p >
+            Using the weeks of the year date from the previous few cells we use the Holt Winters exponential smoothing method to make predictions about how the frequency of job posts will continue into the future. Forecasting helps to inform scheduling/planning decisions to minimise the impact of future events by estimating future using historial trends, seasonality and local mean etc. Our predictions can inform people as to whether they should be preparing to apply for positions at this point in time or not.
+            <br><br>
+            Our forecasting code uses the statsmodels implementation of the Holt Winters exponential smoothing function. To make accurate and reliable predictions we need to optimise the parameters that are used to train the model. Those paramerters include the alpha : smoothing_level, beta : smoothing_slope, gamma: smoothing_season etc. These parameters can be set manually or simply optimised automatically. One parameters that needs to be manually optimised is the seasonal period which the interval size of repeating seasonal patterns. Here each seasonal period's accuracy is measured using the root mean square error and the period with minimal error is selected for plotting. When training the model, we split the dataset into training and testing partitions to determine the model accuracy to unseen data. This split trys to optimise the amount of data the model is allowed to fit to while retaining enough data to have a good indication as the models generalised performance.
+            <br><br>
+            The results of our predictions continue beyond March to May. Making predictions further into the future will drastically reduce accuracy. The plot shows the difference between the predictions and the actual data. The accuracy of predictions is consistent until reaching the test data. Although the data does follow the general trend of the historical data, taking into account seasonality there's room for improvement as the minimal error is 8175 for a seasonal period of 6. In order to improve, more data and or more sophisticated methods are required to get a better general fit to the data generating process. Our predictions show a low trend of job posting over the next few months
+          </p>
+      </mat-card-content>
+  </mat-card>
+
+</div>

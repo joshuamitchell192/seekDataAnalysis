@@ -2,12 +2,26 @@
 
 <div id='main_word_cloud_div' style="margin-bottom:100px"></div>
 
-<p class="global-centre-paragraph">
-  gegretgrtgrdgdtbdrbdgbgsfssrgrgertgrtgrsgrtgrtgrsgrsgrsgsrgrgrgsrgsrtgsrg srtgrtgsrstgsrtgifuhgriut ghrtughrigh ritugh rdtuighrdituogh riotugh roiughdh ruhg rdigh irdghhriu tghridgh riutgh ritughritugh roitguhri tuogh ritughriutgh iruhgriugh ruighd riutghidrugh ifuhbfgg
-</p>
+<div class="global-text-separator"></div>
 
-<div class="global-separator"></div>
-<mat-divider class="global-divider"></mat-divider>
+<mat-card style="max-width: 1000px; margin-left: auto; margin-right:auto">
+  <mat-card-header >
+    <mat-card-title>Can you detect which skills are required in each sector?</mat-card-title>
+
+  </mat-card-header>
+  <mat-card-content>
+    <p >
+        To find the answer to this question, the average salary per city is a good measure for ranking each of the cities because the salary column is cardinal and it provides the centre of the distribution while not blowing out as the number of job postings increases. The cities are ranked according to their average and the top 10 are shown within a vilolin and box and whisker plot. These charts give further insight into the the city's salary distribution.
+        <br><br>
+        The average salary of locations is calculated using the HighestSalary column so as not to be thrown off by the LowestSalaries equal to 0 that wouldn't contribute. A subset of that list is then used to plot the data.
+        <br><br>
+        Remarkably our results show that the ACT is the most wellpaid location with wide spread distribution of salaries. The ACT doesn't have near the largest population in Australia but it has relative higher skew of salary distribution. The difference between cities is small and isn't desernible until the far ends of the order. Although we can see that the skew of the data tends to move towards the lower salaries as you go further down the rankings, while the 2nd and 3rd quartiles contract. Also, outliers become more frequent and the range slowly decreases. As expected, the locations with higher rankings also have greater number of position in sectors like Information Communication Technology and Healthcare Medical according the the sector composition pie charts above.
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<div class="global-text-separator"></div>
+<!-- <mat-divider class="global-divider"></mat-divider> -->
 <h1 id='global-title'>Sub-Sector Skills</h1>
 <form  class="select-class-form">
   <mat-form-field class="example-full-width">

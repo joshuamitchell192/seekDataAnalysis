@@ -15,7 +15,7 @@ am4core.useTheme(am4themes_material);
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'bigData';
+  title = 'Seek Job Market';
 
   // private chart: am4charts.XYChart;
   // private chart: am4charts.XYChart;
