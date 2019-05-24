@@ -1,4 +1,4 @@
-<h1 id='global-title'>Comparison</h1>
+<h1 id='global-title'>Comparing Sectors and Locations</h1>
 <div>
   <div id='marketShareDiv'></div>
   <div id='marketShareCitiesDiv'></div>
@@ -11,9 +11,9 @@
       <p >
           This analysis examined which sectors held the highest market share. Knowing which sectors make up the majority of the market share is important for understanding the current trends and demands for jobs within professions. High school students can use the information to determine what to study at university so that they are confident there will be a job for them after they graduate. Companies can use the information to determine how they should skew their business services to cater for the current demand. The government can use the information to see what job sectors are worth supporting, and which sectors could benefit from initiatives or additional teaching programs. For example, if there was a significant demand for ICT jobs, then the government could start coding classes in high schools, or if there was a significant demand for legal jobs, then the government could support mooting competitions for high school students to get them interested in the profession.
           <br><br>
-          Analysing the market share among a select number of sectors involves determing each sector's share of the total. This kind of compositional analysis is best represented through a pie chart. Consequently, we determined the job listing count of each sector from the dataset, then converted the counts into a percentage representation, and subsequently created a pie chart showing the percentage market share of all sectors.
+          Analysing the market share among a set number of sectors involves determing each sector's share of the total. This kind of compositional analysis is best represented through a pie chart. Consequently, we determined the job listing count of each sector from the dataset, then converted the counts into a percentage representation, and subsequently created a pie chart showing the percentage market share of all sectors.
           <br><br>
-          The results of this analysis showed that the sector with the most market share, and thus the trending sector in the market, was Information Communication Technology, followed by Trades Services and then Healthcare Medical. This shows that there is a high demand for jobs within these sectors. Thus, a suggestion based on statistical reasoning could be made to high school students stating that studying an ICT-related degree in university would be beneficial for their career and in job seeking. The sectors making up the least amount of the market share were Self Employment, Advertising Arts Media, and interestingly, Ceo General Management. We can therefore conclude that general management and CEO jobs are assumedly offered rarely, and jobs in advertising, arts, and media are not in demand. The results also suggest that the Legal, Real Estate Property, and Design Architecture sectore for example have sufficient people working within them, and there is therefore a reduced demand for jobs within those sectors in the market.
+          The results of this analysis showed that the sector with the most market share, and thus the trending sector in the market, was Information Communication Technology, followed by Trades Services and then Healthcare Medical. This shows that there is a high demand for jobs within these sectors. Thus, a suggestion based on statistical reasoning could be made to high school students stating that studying an ICT-related degree in university would be beneficial for their career and in job seeking. The sectors making up the least amount of the market share were Self Employment, Advertising Arts Media, and interestingly, Ceo General Management. We can therefore conclude that general management and CEO jobs are assumedly offered rarely, and jobs in advertising, arts, and media are not in demand. The results also suggest that the Legal, Real Estate Property, and Design Architecture sectors for example have sufficient people working within them, and there is therefore a reduced demand for jobs within those sectors in the market.
       </p>
     </mat-card-content>
   </mat-card>
@@ -46,7 +46,7 @@
 
 <div>
   <div >
-    <h2 style="text-align:center"> Salary Distribution Per Location</h2>
+    <h1 style="text-align:center"> Salary Distribution Per Location</h1>
     <img width=50% height=50% src="./assets/images/violin.jpg" style="display:block; margin-left:auto; margin-right: auto">
   </div>
   <div class="global-text-separator"></div>
@@ -57,11 +57,11 @@
       </mat-card-header>
       <mat-card-content>
         <p >
-            To find the answer to this question, the average salary per city is a good measure for ranking each of the cities because the salary column is cardinal and it provides the centre of the distribution while not blowing out as the number of job postings increases. The cities are ranked according to their average and the top 10 are shown within a vilolin and box and whisker plot. These charts give further insight into the the city's salary distribution.
+            To find the answer to this question, the average salary per city is a good measure for ranking each of the cities because the salary column is cardinal, and it provides the centre of the distribution while not blowing out as the number of job postings increases. The cities are ranked according to their average and shown within a vilolin and box and whisker plot. These charts give further insight into the the city's salary distribution.
             <br><br>
-            The average salary of locations is calculated using the HighestSalary column so as not to be thrown off by the LowestSalaries equal to 0 that wouldn't contribute. A subset of that list is then used to plot the data.
+            The average salary of locations is calculated using the HighestSalary column so as not to be thrown off by the LowestSalary being equal to 0 which wouldn't contribute. A subset of that list is then used to plot the data.
             <br><br>
-            Remarkably our results show that the ACT is the most wellpaid location with wide spread distribution of salaries. The ACT doesn't have near the largest population in Australia but it has relative higher skew of salary distribution. The difference between cities is small and isn't desernible until the far ends of the order. Although we can see that the skew of the data tends to move towards the lower salaries as you go further down the rankings, while the 2nd and 3rd quartiles contract. Also, outliers become more frequent and the range slowly decreases. As expected, the locations with higher rankings also have greater number of position in sectors like Information Communication Technology and Healthcare Medical according the the sector composition pie charts above.
+            Remarkably our results show that the ACT is the most wellpaid location with widespread distribution of salaries. The ACT doesn't have near the largest population in Australia but it has a relatively higher skew of salary distribution. The difference between cities is small and isn't desernible until the far ends of the order. Although, we can see that the skew of the data tends to move towards the lower salaries as you go further down the rankings, while the 2nd and 3rd quartiles contract. Also, outliers become more frequent and the range slowly decreases. As expected, the locations with higher rankings also have a greater number of positions in sectors like Information Communication Technology and Healthcare Medical according the the sector composition pie charts above.
         </p>
       </mat-card-content>
     </mat-card>
@@ -79,11 +79,11 @@
     </mat-card-header>
     <mat-card-content>
       <p >
-          The preceding study What is the salary range for each sector/sub-sector? looked at the salary range of job advertisements within each field and subfield. The investigation simply examined these salaries, without any comparison. Consequently, this investigation compares the salary range of sectors and sub-sectors. By comparing these metrics, we are able to discover the distribution of jobs within a salary range for a particular sector, rather than just knowing a certain sector has job advertisements offering salaries within the range of 0 to 999.
-          <br><br>
-          To compare the sectors, we decided that we would examine the number of sub-sectors in each sector that were within a specified salary range. In regard to implementation, we defined "salary range buckets" for each sector. If a job advertisement belonged to a sub-sector within a given sector, then the salary range of that job advertisement would be determined and the bucket corresponding to that salary range for the given sector would then have an additional count added to it. A stacked column chart was then used to visualise these sector salary range buckets to compare the sub-sector salary ranges between sectors.
-          <br><br>
-          The stacked column chart provided interesting insights into each of the sector's job advertisements. The sector Ceo General Management was found to have sub-sector job advertisements mainly within the salary range of 0 to 999. Where as the sectors Retail Consumer Products and Hospitality Tourism, while have significantly more job advertisements than Ceo General Management, had the majority of their sub-sector job listings within the lower salary ranges. Furthermore, all sectors appeared to have a relatively even distribution among the sub-sector salary ranges that were present within the sector. However, there was sectors such as Information Communication Technology whose salary range distribution appeared somewhat skewed. In the case of Information Communication Technology, the sub-sector salary ranges were skewed towards 200 to 999, highlighting that the sector has a signifcant portion of its jobs that are well paying.
+        The preceding study, What is the salary range for each sector/sub-sector?, looked at the annual salary range of job advertisements within each sector and sub-sector. The investigation simply examined these salaries, without any comparison. Consequently, this investigation compares the annual salary range of sectors and sub-sectors. By comparing these metrics, we are able to discover the distribution of jobs within an annual salary range for a particular sector, rather than just knowing a certain sector has job advertisements offering salaries within the range of $0 to \$200,000+.
+        <br><br>
+        To compare the sectors, we decided that we would examine the number of sub-sectors in each sector that were within a specified salary range. In regard to implementation, we defined "annual salary range buckets" for each sector. If a job advertisement belonged to a sub-sector within a given sector, then the annual salary range of that job advertisement would be determined and the bucket corresponding to that annual salary range for the given sector would then have an additional count added to it. A stacked column chart was then used to visualise these sector annual salary range buckets to compare the sub-sector annual salary ranges between sectors.
+        <br><br>
+        The stacked column chart provided interesting insights into each of the sector's job advertisements. The sector Ceo General Management was found to have sub-sector job advertisements mainly within the annual salary range of $120,000 to \$200,000+. Whereas the sectors Retail Consumer Products and Hospitality Tourism, while have significantly more job advertisements than Ceo General Management, had the majority of their sub-sector job listings within the lower annual salary ranges. Furthermore, all sectors appeared to have a relatively even distribution among the sub-sector annual salary ranges that were present within the sector. However, there was sectors such as Information Communication Technology whose annual salary range distribution appeared somewhat skewed. In the case of Information Communication Technology, the sub-sector annual salary ranges were skewed towards  200,000to 200,000+, highlighting that the sector has a signifcant portion of its jobs that are well paying
       </p>
     </mat-card-content>
   </mat-card>
@@ -92,6 +92,33 @@
 
 <div class="global-separator"></div>
 
-<object width=100% height="800" style="margin-left:auto; margin-right:auto" data="./assets/data/Location-Market-Share-Map.html">
-  Your browser doesn’t support the object tag.
-</object>
+
+<div>
+
+  <mat-card style="max-width: 1000px; margin-left: auto; margin-right:auto">
+    <mat-card-header >
+      <mat-card-title>Market by Location / Bubble Map</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+      <p >
+          While studying the market by location, we found that Sydney has the greatest job market share among
+          all cities of Australia, making up 30.8% of the total job listings on SEEK. Furthermore, the combined
+          market share of Sydney, Melbourne and Brisbane was found to be 65.4%, highlighting that these three
+          cities offer the majority of jobs in Australia. Refer to the bubble map below for one of our data
+          visualisations of this study.
+
+      </p>
+    </mat-card-content>
+  </mat-card>
+  <div class="global-text-separator"></div>
+  <object width=100% height="800" style="margin-left:auto; margin-right:auto" data="./assets/data/Location-Market-Share-Map.html">
+    Your browser doesn’t support the object tag.
+  </object>
+
+
+
+
+  <div class="global-text-separator"></div>
+
+</div>

@@ -6,7 +6,7 @@ import am4themes_material from "@amcharts/amcharts4/themes/material";
 import { Title } from '@angular/platform-browser';
 
 import marketShareData from '../../assets/data/marketshare_pie_chart.json';
-import stackBarData from '../../assets/data/stacked_column.json';
+import stackBarData from '../../assets/data/stacked_column(1).json';
 import marketShareCitiesData from '../../assets/data/marketshare_cities_pie_chart.json';
 
 
@@ -72,7 +72,8 @@ export class CompareComponent implements OnInit {
     categoryAxis.renderer.labels.template.horizontalCenter = "right";
     categoryAxis.renderer.labels.template.verticalCenter = "middle";
     categoryAxis.renderer.labels.template.rotation = 270;
-    categoryAxis.renderer.grid.template.location = 0;
+    // categoryAxis.renderer.grid.template.location = 0;
+    categoryAxis.renderer.minGridDistance = 0;
 
     let valueAxis = stacked_bar_chart.yAxes.push(new am4charts.ValueAxis());
     valueAxis.renderer.inside = true;
@@ -100,18 +101,18 @@ export class CompareComponent implements OnInit {
       return series;
     }
 
-    createSeries("0 - 60", "0 - 60")
-    createSeries("0 - 70", "0 - 70")
-    createSeries("0 - 80", "0 - 80")
-    createSeries("0 - 100", "0 - 100")
-    createSeries("0 - 120", "0 - 120")
-    createSeries("0 - 150", "0 - 150")
-    createSeries("0 - 200", "0 - 200")
-    createSeries("50 - 200", "50 - 200")
-    createSeries("0 - 999", "0 - 999")
-    createSeries("40 - 999", "40 - 999")
+    createSeries("$0 - $60,000", "$0 - $60,000")
+    createSeries("$0 - $70,000", "$0 - $70,000")
+    createSeries("$0 - $80,000", "$0 - $80,000")
+    createSeries("$0 - $100,000", "$0 - $100,000")
+    createSeries("$0 - $120,000", "$0 - $120,000")
+    createSeries("$0 - $150,000", "$0 - $150,000")
+    createSeries("$0 - $200,000", "$0 - $200,000")
+    createSeries("$50,000 - $200,000", "$50,000 - $200,000")
+    createSeries("$0 - $200,000+", "$0 - $200,000+")
+    createSeries("$40,000 - $200,000+", "$40,000 - $200,000+")
     let title = stacked_bar_chart.titles.create();
-    title.text = "Stacked Bar Chart";
+    title.text = "Number of Sub-Sectors within Salary Ranges";
     title.fontSize = 50;
     title.marginBottom = 30;
     stacked_bar_chart.legend = new am4charts.Legend();

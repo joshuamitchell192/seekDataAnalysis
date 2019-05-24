@@ -108,41 +108,41 @@ export class TrendComponent implements OnInit {
       week_of_year_chart.data = weekOfYearData;
 
       // Create axes
-      let monthCategoryAxis = week_of_year_chart.xAxes.push(new am4charts.CategoryAxis());
-      monthCategoryAxis.dataFields.category = "weekOfYear";
-      monthCategoryAxis.renderer.grid.template.location = 0;
-      monthCategoryAxis.renderer.minGridDistance = 30;
-      monthCategoryAxis.renderer.labels.template.horizontalCenter = "right";
-      monthCategoryAxis.renderer.labels.template.verticalCenter = "middle";
-      monthCategoryAxis.renderer.labels.template.rotation = 270;
-      monthCategoryAxis.tooltip.disabled = true;
-      monthCategoryAxis.renderer.minHeight = 110;
+      let week_of_year_CategoryAxis = week_of_year_chart.xAxes.push(new am4charts.CategoryAxis());
+      week_of_year_CategoryAxis.dataFields.category = "weekOfYear";
+      week_of_year_CategoryAxis.renderer.grid.template.location = 0;
+      week_of_year_CategoryAxis.renderer.minGridDistance = 30;
+      week_of_year_CategoryAxis.renderer.labels.template.horizontalCenter = "right";
+      week_of_year_CategoryAxis.renderer.labels.template.verticalCenter = "middle";
+      week_of_year_CategoryAxis.renderer.labels.template.rotation = 270;
+      week_of_year_CategoryAxis.tooltip.disabled = true;
+      week_of_year_CategoryAxis.renderer.minHeight = 110;
 
-      let monthValueAxis = week_of_year_chart.yAxes.push(new am4charts.ValueAxis());
-      monthValueAxis.renderer.minWidth = 50;
+      let week_of_year_ValueAxis = week_of_year_chart.yAxes.push(new am4charts.ValueAxis());
+      week_of_year_ValueAxis.renderer.minWidth = 50;
 
       // Create series
-      let monthSeries = week_of_year_chart.series.push(new am4charts.ColumnSeries());
-      monthSeries.sequencedInterpolation = true;
-      monthSeries.dataFields.valueY = "job_advertisement_count";
-      monthSeries.dataFields.categoryX = "weekOfYear";
+      let week_of_year_Series = week_of_year_chart.series.push(new am4charts.ColumnSeries());
+      week_of_year_Series.sequencedInterpolation = true;
+      week_of_year_Series.dataFields.valueY = "job_advertisement_count";
+      week_of_year_Series.dataFields.categoryX = "weekOfYear";
       // series.columns.template.propertyFields.fill = "month";
-      monthSeries.tooltipText = "[{categoryX}: bold]{valueY}[/]";
-      monthSeries.columns.template.strokeWidth = 0;
+      week_of_year_Series.tooltipText = "[{categoryX}: bold]{valueY}[/]";
+      week_of_year_Series.columns.template.strokeWidth = 0;
 
-      monthSeries.tooltip.pointerOrientation = "vertical";
+      week_of_year_Series.tooltip.pointerOrientation = "vertical";
 
-      monthSeries.columns.template.column.cornerRadiusTopLeft = 10;
-      monthSeries.columns.template.column.cornerRadiusTopRight = 10;
-      monthSeries.columns.template.column.fillOpacity = 0.8;
+      week_of_year_Series.columns.template.column.cornerRadiusTopLeft = 10;
+      week_of_year_Series.columns.template.column.cornerRadiusTopRight = 10;
+      week_of_year_Series.columns.template.column.fillOpacity = 0.8;
 
       // on hover, make corner radiuses bigger
-      let monthHoverState = series.columns.template.column.states.create("hover");
-      monthHoverState.properties.cornerRadiusTopLeft = 0;
-      monthHoverState.properties.cornerRadiusTopRight = 0;
-      monthHoverState.properties.fillOpacity = 1;
+      let week_of_year_HoverState = series.columns.template.column.states.create("hover");
+      week_of_year_HoverState.properties.cornerRadiusTopLeft = 0;
+      week_of_year_HoverState.properties.cornerRadiusTopRight = 0;
+      week_of_year_HoverState.properties.fillOpacity = 1;
 
-      monthSeries.columns.template.adapter.add("fill", function(fill, target) {
+      week_of_year_Series.columns.template.adapter.add("fill", function(fill, target) {
         return month_chart.colors.getIndex(target.dataItem.index);
       });
       let week_of_year_title = week_of_year_chart.titles.create();
@@ -150,8 +150,8 @@ export class TrendComponent implements OnInit {
       week_of_year_title.fontSize = 25;
       week_of_year_title.marginBottom = 30;
       // Cursor
-      month_chart.cursor = new am4charts.XYCursor();
-      month_chart.cursor.behavior = "none";
+      week_of_year_chart.cursor = new am4charts.XYCursor();
+      week_of_year_chart.cursor.behavior = "none";
 
       ////////////////////////////////////////////////////////////////////////////////
       /// Salary Over Time Chart

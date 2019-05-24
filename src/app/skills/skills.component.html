@@ -11,20 +11,20 @@
   </mat-card-header>
   <mat-card-content>
     <p >
-        The following investigation looks at the required skillsets for each sector in the database. This investigation was conducted to examine the job advertisements on SEEK and determine if there was a select number of skillsets that were most frequently requested within a particular sector. This information would then allow high school students contemplating whether to start in that sector to see what would be required of them, and what they should prepare for. It would allow university students to see what skills they need to develop in order to enter the workforce, and it would allow people already working within the field to see what skills they are expected to have and should therefore maintain. Moreover, by examining the most common skillsets across all sectors, we can determine what are the most popular skillsets to have for any profession. Teaching bodies such as schools and universities could take this list of skillsets and ensure that all of their students receive additional teaching in regard to them so that they will be able to develop these skills for their future job prospects.
-        <br><br>
-        Our first idea was to examine the Requirement attribute of the provided SEEK dataset. However, this information was simply textual, and would consequently require advanced natural language processing to determine the context of sentences and then extract skillsets relevant to the specific sector and sub-sector. We consequently hypothesised another method for skillset extraction. The FullDescription attribute provided the raw description of the job advertisement in HTML. After analysing job advertisements on the SEEK website, we observed a common trend in job listings. Job listings would list the required skills for the job in bulletpoints. We thought that we would therefore be able to simply extract bulletpoint information from the full descriptions to build a dataset of skillset related sentences. But, we found that job listings would contain additional information in bulletpoints, such as what the job was about and what would the person be required to do. Our solution around this problem was to firstly find all bulletpoint listings within the full description, and then look at the text above them for context. If the contextual text contained words such as requirements or attributes, then we would assume the following bulletpoints were in relation to the require skillsets and therefore would extract them for our dataset. We then used term frequency–inverse document frequency (tf-idf) as a metric to determine which ngrams were the most popular skillsets for each sector.
-        <br><br>
-        Mor specifically, our approach was to firstly find ul tags within the full descriptions, then look at the text within p tags above each of the ul tags for context, and if the contextual text contained words alluding to the fact that the following ul tags were in relation to job required skills, we would then extract the li tag sentences and add them as documents into the corresponding sector's skillset sentence dataset. tf-idf was then used to extract the most popular skillsets from these datasets for each sector.
-        <br><br>
-        The results of this investigation provided relevant skillsets for each of the sectors within the dataset. We observed that some of the initial found skillsets were not exactly describing the skills involved, so we investigated them further before adding them as stop words. We compared the skillsets of sectors using a scatter text graph and found that even in fields which appear significantly different, such as Trades Services and Information Communication Technnology, there are quite a number of similar skillsets found among them. We then merged the skillset datasets of all sectors together in order to study the most popular skillsets among all sectors. The most popular skillset was found to be communication skills, followed by customer service, which are known to be valued by employers in all fields. Interestingly, having a drivers license (or in regard to skillsets, having the ability to drive), was ranked fourth, above skills of management, team player and time management. However, these skillsets were still very popular among job advertisements.
+      The following investigation looks at the required skillsets for each sector in the database. This investigation was conducted to examine the job advertisements on SEEK and determine if there was a select number of skillsets that were most frequently requested within a particular sector. This information would then allow high school students contemplating whether to start in that sector to see what would be required of them, and what they should prepare for. It would allow university students to see what skills they need to develop in order to enter the workforce, and it would allow people already working within the field to see what skills they are expected to have and should therefore maintain. Moreover, by examining the most common skillsets across all sectors, we can determine what are the most popular skillsets to have for any profession. Teaching bodies such as schools and universities could take this list of skillsets and ensure that all of their students receive additional teaching in regard to them so that they will be able to develop these skills for their future job prospects.
+      <br><br>
+      Our first idea was to examine the Requirement attribute of the provided SEEK dataset. However, this information was simply textual, and would consequently require advanced natural language processing to determine the context of sentences and then extract skillsets relevant to the specific sector and sub-sector. We consequently hypothesised another method for skillset extraction. The FullDescription attribute provided the raw description of the job advertisement in HTML. After analysing job advertisements on the SEEK website, we observed a common trend in job listings. Job listings would list the required skills for the job in bulletpoints. We thought that we would therefore be able to simply extract bulletpoint information from the full descriptions to build a dataset of skillset related sentences. But, we found that job listings would contain additional information in bulletpoints, such as what the job was about and what the person would be required to do. Our solution around this problem was to firstly find all bulletpoint listings within the full description, and then look at the text above them for context. If the contextual text contained words such as requirements or attributes, then we would assume the following bulletpoints were in relation to the required skillsets and therefore would extract them for our dataset. We then used term frequency–inverse document frequency (tf-idf) as a metric to determine which ngrams were the most popular skillsets for each sector.
+      <br><br>
+      More specifically, our approach was to firstly find ul tags within the full descriptions, then look at the text within p tags above each of the ul tags for context, and if the contextual text contained words alluding to the fact that the following ul tags were in relation to job required skills, we would then extract the li tag sentences and add them as documents into the corresponding sector's skillset sentence dataset. tf-idf was then used to determine the most popular skillsets from these datasets for each sector.
+      <br><br>
+      The results of this investigation provided relevant skillsets for each of the sectors within the dataset. We observed that some of the initially found skillsets were not exactly describing the skills involved, so we investigated them further before adding them as stop words. We compared the skillsets of sectors using a scatter text graph and found that even in fields which appear significantly different, such as Trades Services and Information Communication Technnology, there are quite a number of similar skillsets found among them. We then merged the skillset datasets of all sectors together in order to study the most popular skillsets among all sectors. The most popular skillset was found to be communication skills, followed by customer service, which are known to be valued by employers in all fields. Interestingly, having a drivers license (or in regard to skillsets, having the ability to drive), was ranked fourth, above skills of management, team player and time management. However, these skillsets were still very popular among job advertisements.
     </p>
   </mat-card-content>
 </mat-card>
 
 <div class="global-text-separator"></div>
 <!-- <mat-divider class="global-divider"></mat-divider> -->
-<h1 id='global-title'>Sub-Sector Skills</h1>
+<h1 id='global-title'>Skills Per Sector</h1>
 <form  class="select-class-form">
   <mat-form-field class="example-full-width">
     <input type="text" placeholder="Select Sector" (keyup.enter)="onEnter($event)" aria-label="Class" matInput [formControl]="select_class" [matAutocomplete]="auto">
@@ -40,6 +40,24 @@
 
 <div class="global-separator"></div>
 
-<object width=100% height="800" style="margin-left:auto; margin-right:auto" data="./assets/data/Sector-Visualization.html">
-  Your browser doesn’t support the object tag.
-</object>
+
+
+<div>
+  <mat-card style="max-width: 1000px; margin-left: auto; margin-right:auto">
+    <mat-card-header >
+      <mat-card-title>Scatter Text</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+      <p >
+        The skillsets within each sector were compared, and we found that sectors which seemed to be very different
+        in practice still had a lot of desired skillsets in common. A graphical representation of this comparative
+        analysis is presented below.
+      </p>
+    </mat-card-content>
+  </mat-card>
+  <object width=100% height="800" style="margin-left:auto; margin-right:auto" data="./assets/data/Sector-Visualization.html">
+    Your browser doesn’t support the object tag.
+  </object>
+</div>
+
